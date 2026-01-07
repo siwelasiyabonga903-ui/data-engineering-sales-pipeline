@@ -1,6 +1,4 @@
--- =========================
 -- STAGING TABLES (RAW DATA)
--- =========================
 
 CREATE TABLE IF NOT EXISTS stg_customers (
     customer_id INT,
@@ -32,9 +30,7 @@ CREATE TABLE IF NOT EXISTS stg_order_items (
     quantity INT
 );
 
--- =========================
 -- DIMENSION TABLES
--- =========================
 
 CREATE TABLE IF NOT EXISTS dim_customers (
     customer_id INT PRIMARY KEY,
@@ -57,9 +53,7 @@ CREATE TABLE IF NOT EXISTS dim_dates (
     day INT
 );
 
--- =========================
 -- FACT TABLE
--- =========================
 
 CREATE TABLE IF NOT EXISTS fact_sales (
     sales_id SERIAL PRIMARY KEY,
