@@ -16,18 +16,14 @@ engine = create_engine(
     f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
-# --------------------------
 # STEP 1: Load staging tables
-# --------------------------
 
 stg_customers = pd.read_sql("SELECT * FROM stg_customers", engine)
 stg_products = pd.read_sql("SELECT * FROM stg_products", engine)
 stg_orders = pd.read_sql("SELECT * FROM stg_orders", engine)
 stg_order_items = pd.read_sql("SELECT * FROM stg_order_items", engine)
 
-# --------------------------
 # STEP 2: Transform Dimensions
-# --------------------------
 
 # Customers dimension
 dim_customers = stg_customers.drop_duplicates(subset=["customer_id"])
@@ -47,9 +43,7 @@ dim_dates = pd.DataFrame({
 })
 dim_dates.to_sql("dim_dates", engine, if_exists="replace", index=False)
 
-# --------------------------
 # STEP 3: Transform Fact Table
-# --------------------------
 
 # Merge orders with order_items
 fact_sales = stg_order_items.merge(
