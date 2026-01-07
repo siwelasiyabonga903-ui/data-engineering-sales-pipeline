@@ -1,0 +1,4 @@
+customer_id,customer_name,email,region,created_at
+1,John Dube,john.dube@email.com,Gauteng,2023-01-10
+2,Thandi Mokoena,thandi.m@email.com,KZN,2023-02-15
+3,Sipho Nkosi,sipho.n@email.com,Western Cape,2023-03-01

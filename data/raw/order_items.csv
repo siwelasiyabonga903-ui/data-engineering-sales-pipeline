@@ -1,0 +1,5 @@
+order_item_id,order_id,product_id,quantity
+1,5001,101,1
+2,5001,103,2
+3,5002,102,1
+4,5003,103,3
